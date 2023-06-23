@@ -1,0 +1,13 @@
+?
+*.log
+*.pdf
+*.gnca
+*.gcno
+*#
+*~
+*.o
+*.txt
+*.a
+.vscode
+vgcore.*
+my_jam
