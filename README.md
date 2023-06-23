@@ -1,2 +1,2 @@
 # Epitech-JAM
-Parasite game in JAVA for Epitech JAM
+Parasite game in CSFML for Epitech JAM
