@@ -17,11 +17,20 @@ typedef struct camera_s {
     sfFloatRect res_rect;
 }camera_t;
 
+typedef struct player_s {
+    sfTexture *tex;
+    sfSprite *sprite;
+    sfVector2f pos;
+    sfFloatRect rec_pos;
+}player_t;
+
 typedef struct ingame_s {
     sfSprite *back;
     sfTexture *tex;
     camera_t *camera;
     sfMusic *music;
+    player_t *player;
+    sfFloatRect **walls;
 }ingame_t;
 
 #endif /* !INGAME_H */
