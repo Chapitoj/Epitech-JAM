@@ -7,9 +7,20 @@
 
 #include "jam.h"
 
+static void go_to_settings(game_t *game)
+{
+    sfView_reset(CAMERA->view, (sfFloatRect){0, 0, 1920, 1080});
+    sfRenderWindow_setView(WINDOW, CAMERA->view);
+    settings_handler(game);
+    sfView_reset(CAMERA->view, CAMERA->res_rect);
+    sfRenderWindow_setView(WINDOW, CAMERA->view);
+}
+
 static void check_movement(game_t *game, sfKeyCode code)
 {
     if (code == sfKeyEscape)
+        go_to_settings(game);
+    if (code == sfKeyL)
         sfRenderWindow_close(WINDOW);
     if (code == sfKeyLeft) {
         move_player_left(game);

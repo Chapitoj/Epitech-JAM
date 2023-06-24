@@ -38,7 +38,6 @@ void menu_handler(game_t *game)
         while (sfRenderWindow_pollEvent(WINDOW, &EVENT))
             analyze_menu_events(game);
     }
-    sfMusic_stop(MENU->music);
     game_handler(game);
     clear_menu(MENU);
 }

@@ -16,5 +16,6 @@ void game_handler(game_t *game)
         while (sfRenderWindow_pollEvent(WINDOW, &EVENT))
             analyze_game_events(game);
     }
+    sfMusic_stop(MENU->music);
     clear_ingame(INGAME);
 }

@@ -51,6 +51,8 @@ static void analyze_settings_events(game_t *game)
     if (EVENT.type == sfEvtKeyPressed) {
         if (EVENT.key.code == sfKeyEscape)
             SETTINGS->leave = sfTrue;
+        if (EVENT.key.code == sfKeyL)
+            sfRenderWindow_close(WINDOW);
     }
     if (EVENT.type == sfEvtMouseButtonPressed) {
         play_sound(game, game->cursor->sound);
