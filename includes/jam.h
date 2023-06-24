@@ -32,7 +32,7 @@
     #define PDWON 496
     #define CAM_HEIGHT 100
     #define CAM_WIDTH 200
-    #define NB_WALLS 28
+    #define NB_WALLS 35
 
 game_t *init_game(void);
 

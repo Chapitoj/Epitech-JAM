@@ -33,6 +33,13 @@ static void add_walls(sfFloatRect **walls)
     walls[25] = init_wall(176, 413, 136, 46);
     walls[26] = init_wall(255, 459, 10, 74);
     walls[27] = init_wall(412, 447, 14, 60);
+    walls[28] = init_wall(295, 251, 44, 12);
+    walls[29] = init_wall(248, 323, 24, 55);
+    walls[30] = init_wall(458, 395, 18, 21);
+    walls[31] = init_wall(538, 339, 22, 27);
+    walls[32] = init_wall(566, 358, 34, 35);
+    walls[33] = init_wall(540, 367, 12, 41);
+    walls[34] = init_wall(591, 306, 86, 3);
 }
 
 sfFloatRect **init_walls(void)
