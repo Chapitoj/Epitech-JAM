@@ -21,6 +21,8 @@
     #define CAMERA game->ingame->camera
     #define PLAYER game->ingame->player
     #define WALLS game->ingame->walls
+    #define FAMILY game->ingame->family
+    #define TIME 60
     #define VELOCITY 2
     #define LEFT 100
     #define PLEFT 166
@@ -103,5 +105,11 @@ int can_go_right(game_t *game);
 int can_go_up(game_t *game);
 
 int can_go_down(game_t *game);
+
+unit_t **init_family(sfFloatRect **walls);
+
+char *convert_time(int seconds);
+
+int is_in_wall(sfFloatRect *rec, sfFloatRect **walls);
 
 #endif /* !JAM_H */

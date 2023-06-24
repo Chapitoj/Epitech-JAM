@@ -26,6 +26,8 @@ SRC	=	src/main.c \
 		ingame/move_player.c	\
 		ingame/init_walls.c	\
 		ingame/check_collision.c	\
+		ingame/init_family.c	\
+		ingame/convert_time.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
