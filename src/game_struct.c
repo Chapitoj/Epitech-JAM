@@ -15,6 +15,7 @@ game_t *init_game(void)
     WINDOW = sfRenderWindow_create(MODE, "parasite", sfFullscreen, NULL);
     CURSOR = init_cursor();
     SETTINGS = init_settings(WINDOW);
+    INGAME = init_ingame();
     return game;
 }
 

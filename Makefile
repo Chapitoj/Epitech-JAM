@@ -18,6 +18,11 @@ SRC	=	src/main.c \
 		settings/settings_utils.c	\
 		settings/settings_handler.c	\
 		src/play_sound.c	\
+		ingame/game_handler.c	\
+		ingame/game_utils.c	\
+		ingame/analyze_game_events.c	\
+		ingame/display_game.c	\
+		ingame/move_cam.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

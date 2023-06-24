@@ -33,11 +33,12 @@ void menu_handler(game_t *game)
     MENU = init_menu(WINDOW);
 
     sfMusic_play(MENU->music);
-    while (sfRenderWindow_isOpen(WINDOW)) {
+    while (sfRenderWindow_isOpen(WINDOW) && !MENU->leave) {
         display_menu(game);
         while (sfRenderWindow_pollEvent(WINDOW, &EVENT))
             analyze_menu_events(game);
     }
     sfMusic_stop(MENU->music);
+    game_handler(game);
     clear_menu(MENU);
 }

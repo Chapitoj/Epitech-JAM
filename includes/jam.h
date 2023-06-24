@@ -17,6 +17,15 @@
     #define CURSOR game->cursor
     #define MENU game->menu
     #define SETTINGS game->settings
+    #define INGAME game->ingame
+    #define CAMERA game->ingame->camera
+    #define VELOCITY 5
+    #define LEFT 100
+    #define UP 150
+    #define RIGHT 1042
+    #define DOWN 510
+    #define CAM_HEIGHT 100
+    #define CAM_WIDTH 200
 
 game_t *init_game(void);
 
@@ -51,5 +60,23 @@ void check_hover(menu_t *m, sfMouseMoveEvent *e);
 int is_button_pressed(button_t *b, sfMouseButtonEvent *e);
 
 void play_sound(game_t *game, sfSound *sound);
+
+ingame_t *init_ingame(void);
+
+void clear_ingame(ingame_t *ingame);
+
+void game_handler(game_t *game);
+
+void display_game(game_t *game);
+
+void analyze_game_events(game_t *game);
+
+void move_cam_left(game_t *game);
+
+void move_cam_up(game_t *game);
+
+void move_cam_right(game_t *game);
+
+void move_cam_down(game_t *game);
 
 #endif /* !JAM_H */

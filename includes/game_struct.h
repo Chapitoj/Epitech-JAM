@@ -10,6 +10,7 @@
 
     #include "menu_struct.h"
     #include "settings_struc.h"
+    #include "ingame.h"
 
 typedef struct game_s {
     sfVideoMode mode;
@@ -18,6 +19,7 @@ typedef struct game_s {
     cursor_t *cursor;
     menu_t *menu;
     settings_t *settings;
+    ingame_t *ingame;
 }game_t;
 
 #endif /* !GAME_STRUCT_H */
