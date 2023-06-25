@@ -43,6 +43,8 @@ typedef struct ingame_s {
     sfFloatRect **walls;
     sfClock *clock;
     int time;
+    int kills;
+    sfBool ath;
 }ingame_t;
 
 #endif /* !INGAME_H */

@@ -39,6 +39,12 @@ void game_handler(game_t *game)
         while (sfRenderWindow_pollEvent(WINDOW, &EVENT))
             analyze_game_events(game);
     }
+    if (sfRenderWindow_isOpen(WINDOW)) {
+        if (is_alive(game))
+            end_screen(game, "visu/lost.jpg", (sfVector2f){0.96, 1.1});
+        else
+            end_screen(game, "visu/won.jpg", (sfVector2f){2.4, 2.1});
+    }
     sfMusic_stop(MENU->music);
     sfClock_destroy(INGAME->clock);
     clear_ingame(INGAME);

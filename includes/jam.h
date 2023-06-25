@@ -112,4 +112,6 @@ char *convert_time(int seconds);
 
 int is_in_wall(sfFloatRect *rec, sfFloatRect **walls);
 
+void end_screen(game_t *game, char *filepath, sfVector2f scale);
+
 #endif /* !JAM_H */

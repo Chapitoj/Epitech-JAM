@@ -72,6 +72,8 @@ ingame_t *init_ingame(void)
     ingame->family = init_family(ingame->walls);
     ingame->clock = sfClock_create();
     ingame->time = 0;
+    ingame->ath = sfTrue;
+    ingame->kills = 0;
     return ingame;
 }
 

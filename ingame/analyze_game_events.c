@@ -42,6 +42,12 @@ static void check_random(game_t *game, sfKeyCode code)
         go_to_settings(game);
     if (code == sfKeyL)
         sfRenderWindow_close(WINDOW);
+    if (code == sfKeyZ) {
+        if (INGAME->ath)
+            INGAME->ath = sfFalse;
+        else
+            INGAME->ath = sfTrue;
+    }
 }
 
 static void check_kill(game_t *game, sfKeyCode code)
@@ -60,6 +66,7 @@ static void check_kill(game_t *game, sfKeyCode code)
         && sfFloatRect_intersects(tmp, FAMILY[i]->rec, NULL)) {
             play_sound(game, PLAYER->sound);
             FAMILY[i]->alive = sfFalse;
+            INGAME->kills++;
         }
     }
     free(tmp);

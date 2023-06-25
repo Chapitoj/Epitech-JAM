@@ -28,6 +28,7 @@ SRC	=	src/main.c \
 		ingame/check_collision.c	\
 		ingame/init_family.c	\
 		ingame/convert_time.c	\
+		ingame/end_game.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
