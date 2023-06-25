@@ -33,6 +33,16 @@ typedef struct unit_s {
     sfBool alive;
 }unit_t;
 
+typedef struct police_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfFloatRect *rect;
+    double speed;
+    sfSoundBuffer *buff;
+    sfSound *sound;
+    sfBool called;
+}police_t;
+
 typedef struct ingame_s {
     sfSprite *back;
     sfTexture *tex;
@@ -42,9 +52,16 @@ typedef struct ingame_s {
     unit_t **family;
     sfFloatRect **walls;
     sfClock *clock;
+    sfClock *move;
     int time;
     int kills;
     sfBool ath;
+    police_t *police;
+    sfClock *stop;
+    sfSound *shout;
+    sfSoundBuffer *buffsh;
+    sfSound *timer;
+    sfSoundBuffer *bufft;
 }ingame_t;
 
 #endif /* !INGAME_H */

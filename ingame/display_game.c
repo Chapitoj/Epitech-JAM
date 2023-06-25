@@ -6,13 +6,18 @@
 */
 
 #include "jam.h"
+#include <string.h>
 
 static void display_timer(game_t *game, sfVector2f pos)
 {
     sfFont *font = sfFont_createFromFile("visu/Para.ttf");
     sfText *text = sfText_create();
-    char *time = convert_time(TIME - INGAME->time);
+    char *time = NULL;
 
+    if (TIME - INGAME->time <= 0)
+        time = strdup("00:00");
+    else
+        time = convert_time(TIME - INGAME->time);
     sfText_setFont(text, font);
     sfText_setString(text, time);
     sfText_setColor(text, sfRed);
@@ -54,6 +59,8 @@ void display_game(game_t *game)
         if (FAMILY[i]->alive)
             sfRenderWindow_drawSprite(WINDOW, FAMILY[i]->sprite, NULL);
     }
+    if (POLICE->called)
+        sfRenderWindow_drawSprite(WINDOW, POLICE->sprite, NULL);
     if (INGAME->ath) {
         display_timer(game, (sfVector2f){CAMERA->position.x,
         CAMERA->position.y - 4});

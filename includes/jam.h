@@ -22,7 +22,8 @@
     #define PLAYER game->ingame->player
     #define WALLS game->ingame->walls
     #define FAMILY game->ingame->family
-    #define TIME 60
+    #define POLICE game->ingame->police
+    #define TIME 20
     #define VELOCITY 2
     #define LEFT 100
     #define PLEFT 166
@@ -113,5 +114,11 @@ char *convert_time(int seconds);
 int is_in_wall(sfFloatRect *rec, sfFloatRect **walls);
 
 void end_screen(game_t *game, char *filepath, sfVector2f scale);
+
+void move_police(game_t *game, police_t *police);
+
+police_t *init_police(void);
+
+void init_sounds(ingame_t *ingame);
 
 #endif /* !JAM_H */

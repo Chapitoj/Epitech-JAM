@@ -29,8 +29,10 @@ void end_screen(game_t *game, char *filepath, sfVector2f scale)
 
     sfSprite_setTexture(sprite, texture, 1);
     sfSprite_setScale(sprite, scale);
-    sfView_reset(CAMERA->view, (sfFloatRect){0, 0, 1920, 1080});
-    sfRenderWindow_setView(WINDOW, CAMERA->view);
+    if (sfRenderWindow_isOpen(WINDOW)) {
+        sfView_reset(CAMERA->view, (sfFloatRect){0, 0, 1920, 1080});
+        sfRenderWindow_setView(WINDOW, CAMERA->view);
+    }
     while (sfRenderWindow_isOpen(WINDOW)) {
         display_end(game, sprite);
         while (sfRenderWindow_pollEvent(WINDOW, &EVENT))

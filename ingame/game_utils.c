@@ -71,9 +71,12 @@ ingame_t *init_ingame(void)
     ingame->player = init_player(ingame->walls);
     ingame->family = init_family(ingame->walls);
     ingame->clock = sfClock_create();
+    ingame->move = sfClock_create();
     ingame->time = 0;
     ingame->ath = sfTrue;
     ingame->kills = 0;
+    ingame->police = init_police();
+    init_sounds(ingame);
     return ingame;
 }
 
